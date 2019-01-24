@@ -1,6 +1,6 @@
 # ros-setup
 
-Following the usage instructions in `ros-setup.sh` will do the following:
+Following the usage instructions in `ros-setup.{zsh, bash}` will do the following:
 
 - Setup ROS
 - Setup catkin workspace
@@ -8,11 +8,11 @@ Following the usage instructions in `ros-setup.sh` will do the following:
 
 After the setup is complete, the following commands can be used to test a simulated UR5:
 
-NOTE: You will need running in a GUI session to use the simulators.
+NOTE: You will need running in a GUI session to use the simulators. Run the setup script consistent with your shell.
 
 Multiple terminals will be needed, make sure to `cd ~/ros_ws && source devel/setup.${0}` for each terminal session.
 
-First terminal: `roslaunch ur_bringup ur5_bringup.launch`
+First terminal: `roslaunch ur_gazebo ur5.launch`
 
 Second terminal: `roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true`
 
@@ -22,7 +22,7 @@ Use the following terminal to subscribe to various topics to see what is being p
 
 For example: `rostopic echo /arm_controller/state`
 
-With Rviz running, you should be able to drag the end-effector to a random position within
+With RViz running, you should be able to drag the end-effector to a random position within
 the UR5's workspace. Then from the 'planning' tab, you should be able to plan and execute a path
 which will be played back in real-time on both Rviz and the open Gazebo session.
 
