@@ -6,6 +6,8 @@ Following the usage instructions in `ros-setup.{zsh, bash}` will do the followin
 - Setup catkin workspace
 - Install UR5 ROS packages
 
+## Launching simulated version of UR5
+
 After the setup is complete, the following commands can be used to test a simulated UR5:
 
 NOTE: You will need running in a GUI session to use the simulators. Run the setup script consistent with your shell.
@@ -27,7 +29,7 @@ the UR5's workspace. Then from the 'planning' tab, you should be able to plan an
 which will be played back in real-time on both Rviz and the open Gazebo session.
 
 
-# launch RViz planning on real UR5
+## launch RViz planning on real UR5
 
 
 First terminal: `roslaunch ur_modern_driver ur5_bringup.launch robot_ip:=ur5`
