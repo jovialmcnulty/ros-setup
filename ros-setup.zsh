@@ -41,12 +41,12 @@ catkin_make
 cd src
 wstool init .
 git clone -b kinetic-devel https://github.com/ros-industrial/universal_robot.git
+git clone -b kinetic-devel https://github.com/ros-industrial/ur_modern_driver.git
 cd ..
 rosdep update
 rosdep install --from-paths src --ignore-src --rosdistro kinetic
 catkin_make
 
 sudo apt-get install ros-kinetic-ur-gazebo ros-kinetic-ur5-moveit-config ros-kinetic-ur-kinematics -y 
-
 echo "Make sure to source devel/setup.${CATKIN_SHELL} from ${CATKIN_WS}"
 

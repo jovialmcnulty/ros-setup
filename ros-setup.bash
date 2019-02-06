@@ -30,7 +30,7 @@ sudo apt-get install git-core python-argparse python-vcstools python-rosdep \
         ros-kinetic-actionlib-msgs ros-kinetic-dynamic-reconfigure ros-kinetic-trajectory-msgs
         ros-kinetic-rospy-message-converter -y
 
-sudo apt-get install ros-kinetic-universal-robot -y
+sudo apt-get install ros-kinetic-universal-robot ros-kinetic-industrial-core -y
 
 echo "Making catkin workspace in directory: ${CATKIN_WS}"
 
@@ -41,6 +41,7 @@ catkin_make
 cd src
 wstool init .
 git clone -b kinetic-devel https://github.com/ros-industrial/universal_robot.git
+git clone -b kinetic-devel https://github.com/ros-industrial/ur_modern_driver.git
 cd ..
 rosdep update
 rosdep install --from-paths src --ignore-src --rosdistro kinetic

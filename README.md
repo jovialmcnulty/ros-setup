@@ -26,3 +26,21 @@ With RViz running, you should be able to drag the end-effector to a random posit
 the UR5's workspace. Then from the 'planning' tab, you should be able to plan and execute a path
 which will be played back in real-time on both Rviz and the open Gazebo session.
 
+
+# launch RViz planning on real UR5
+
+
+First terminal: `roslaunch ur_modern_driver ur5_bringup.launch robot_ip:=ur5`
+
+NOTE: ur5 corresponds to the ip of the robot. If the robot is configured correctly (192.168.1.10), a 'poor man's' DNS will resolve to `ur5`.
+
+
+Second terminal: `roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch`
+
+Third terminal (for testing with RViz): `roslaunch ur5_moveit_config moveit_rviz.launch config:=true`
+
+NOTE: Make sure you `cd ~/ros_ws && source devel/setup.$0` for each terminal.
+We should avoid cluttering PATH with ROS configs until we've figured out how the other subsystems need to be configured (in case python path collision with packages from ROS versus global installation etc.)
+
+
+
